@@ -6,7 +6,7 @@
 
 This tool provides an optimal allocation strategy using two of the most frequently used portfolio optimisation methodologies: Mean-variance Optimisation and Mean-semivariance Optimisation. A user inputs an amount of money they want to invest using a parameter at the top of the dashboard, and the Python script calculates the number of shares they should consider buying for each methodology. This is an illustrative example of a portfolio that considers shares in the following companies: Amazon (AMZN), Salesforce (CRM), Alphabet (GOOGL), Nvidia (NVDA), and Twitter (TWTR).
 
-THIS IS NOT INVESTMENT ADVICE. THIS TOOL IS PROVIDED FOR EDUCATIONAL PURPOSES, AND ITS RESULTS ARE ILLUSTRATIVE ONLY. PAST PERFORMANCE IS NOT INDICATIVE OF FUTURE RETURNS.
+**THIS IS NOT INVESTMENT ADVICE. THIS TOOL IS PROVIDED FOR EDUCATIONAL PURPOSES, AND ITS RESULTS ARE ILLUSTRATIVE ONLY. PAST PERFORMANCE IS NOT INDICATIVE OF FUTURE RETURNS.**
 
 ![Portfolio optimisation dashboard](Images/00-portfolio-optimisation-dashboard.png)
 
