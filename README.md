@@ -1,4 +1,5 @@
 # Optimise an equity portfolio in Tableau
+
 ## Tableau DataDev Hackathon - May 2021
 
 ## Overview
@@ -6,6 +7,8 @@
 This tool provides an optimal allocation strategy using two of the most frequently used portfolio optimisation methodologies: Mean-variance Optimisation and Mean-semivariance Optimisation. A user inputs an amount of money they want to invest using a parameter at the top of the dashboard, and the Python script calculates the number of shares they should consider buying for each methodology. This is an illustrative example of a portfolio that considers shares in the following companies: Amazon (AMZN), Salesforce (CRM), Alphabet (GOOGL), Nvidia (NVDA), and Twitter (TWTR).
 
 THIS IS NOT INVESTMENT ADVICE. THIS TOOL IS PROVIDED FOR EDUCATIONAL PURPOSES, AND ITS RESULTS ARE ILLUSTRATIVE ONLY. PAST PERFORMANCE IS NOT INDICATIVE OF FUTURE RETURNS.
+
+![picture](Images/00 - Portfolio optimisation dashboard.png)
 
 See a short [demo of the dashboard on YouTube](https://youtu.be/xpUpi8hCjoo).
 
@@ -15,7 +18,7 @@ I used the following tools:
 
 - [Jupytab](https://github.com/CFMTech/Jupytab): a webserver that allows to explore in Tableau data generated dynamically by a Jupyter Notebook. It's built on the basis of Tableau's Web Data Connector (WDC) and the Jupyter Kernel Gateway.
 
-  I followed this step-by-step [tutorial by Brian Tribondeau on how to install and run Jupytab server](https://towardsdatascience.com/interactive-simulation-with-tableau-and-jupytab-c26adb1be564) to set up the connection between Tableau and my Python script in the Jupyter notebook called **portfolio-optimisation.ipynb**. See the **config.ini** file needed for the Jupytab server for this project for configuration details. 
+  I followed this step-by-step [tutorial by Brian Tribondeau on how to install and run Jupytab server](https://towardsdatascience.com/interactive-simulation-with-tableau-and-jupytab-c26adb1be564) to set up the connection between Tableau and my Python script in the Jupyter notebook called **portfolio-optimisation.ipynb**. See the **config.ini** file needed for the Jupytab server for this project for configuration details.
 
 - Jupyter notebook with my Python script (**portfolio-optimisation.ipynb**)
 - Tableau Desktop
@@ -51,11 +54,10 @@ These functions in the Python script are triggered by the value in the **Set por
 - Web Data Connector
 - Analytics Extension API
 
-## Potential future improvements 
+## Potential future improvements
 
 There are several features I'd like to add to this project in future:
 
 - at the moment the list of equities is fixed in the Python script. I'd like to see if it's possible to allow users to select equities they want to include in their portfolio directly in the dashboard
 - add other methodologies of portfolio optimisation to the dashboard
 - for this project the Jupytab server and the Jupyter notebook are running on my local computer. I tried to set it up on an AWS EC2 instance to make it always available, but didn't have enough time to configure it properly. I'd like to get back to this idea after the hackathon, and make sure the calculations work when I publish the workbook on Tableau Server.
-
