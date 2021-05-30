@@ -8,7 +8,7 @@ This tool provides an optimal allocation strategy using two of the most frequent
 
 THIS IS NOT INVESTMENT ADVICE. THIS TOOL IS PROVIDED FOR EDUCATIONAL PURPOSES, AND ITS RESULTS ARE ILLUSTRATIVE ONLY. PAST PERFORMANCE IS NOT INDICATIVE OF FUTURE RETURNS.
 
-![picture](Images/00 - Portfolio optimisation dashboard.png)
+![picture](tableau-portfolio-optimisation-hackathon/Images/00 - Portfolio optimisation dashboard.png)
 
 See a short [demo of the dashboard on YouTube](https://youtu.be/xpUpi8hCjoo).
 
@@ -18,7 +18,11 @@ I used the following tools:
 
 - [Jupytab](https://github.com/CFMTech/Jupytab): a webserver that allows to explore in Tableau data generated dynamically by a Jupyter Notebook. It's built on the basis of Tableau's Web Data Connector (WDC) and the Jupyter Kernel Gateway.
 
-  I followed this step-by-step [tutorial by Brian Tribondeau on how to install and run Jupytab server](https://towardsdatascience.com/interactive-simulation-with-tableau-and-jupytab-c26adb1be564) to set up the connection between Tableau and my Python script in the Jupyter notebook called **portfolio-optimisation.ipynb**. See the **config.ini** file needed for the Jupytab server for this project for configuration details.
+![picture](tableau-portfolio-optimisation-hackathon/Images/01 - Starting the Jupytab server.png)
+
+![picture](tableau-portfolio-optimisation-hackathon/Images/02 - Notebook to Tableau WDC.png)
+
+I followed this step-by-step [tutorial by Brian Tribondeau on how to install and run Jupytab server](https://towardsdatascience.com/interactive-simulation-with-tableau-and-jupytab-c26adb1be564) to set up the connection between Tableau and my Python script in the Jupyter notebook called **portfolio-optimisation.ipynb**. See the **config.ini** file needed for the Jupytab server for this project for configuration details.
 
 - Jupyter notebook with my Python script (**portfolio-optimisation.ipynb**)
 - Tableau Desktop
@@ -33,10 +37,17 @@ The Python script in this project has two parts: static and dynamic.
 This part of the script is not updated based on user's inputs in Tableau dashboard. The Python script in **portfolio-optimisation.ipynb** for this part does the following:
 
 - sends a query to the [Alpha Vantage API](https://www.alphavantage.co/documentation/) to get daily adjusted stock prices for the set list of equities (Amazon (AMZN), Salesforce (CRM), Alphabet (GOOGL), Nvidia (NVDA), and Twitter (TWTR))
+
+![picture](tableau-portfolio-optimisation-hackathon/Images/Python 1 - Get data from API.png)
+
 - calculates expected return, volatility, semivariance, Sharpe and Sortino ratios for the portfolio using Mean-variance Optimisation and Mean-semivariance Optimisation methodologies.
 - sends two dataframes back to Tableau using the Jupytab WDC:
   - daily adjusted prices for each equity on the first and the last dates in the data set (**final_combined_df** in the Python script, **Main table** in Tableau Desktop)
   - weights and portfolio summary details for both methodologies (**portfolio_summary_combined** in the Python script, **Portfolio summary** in Tableau Desktop).
+
+![picture](tableau-portfolio-optimisation-hackathon/Images/Python 2 - Final tables to pass to Tableau.png)
+
+![picture](tableau-portfolio-optimisation-hackathon/Images/03 - Dataframes in Tableau desktop.png)
 
 **Dynamic part**:
 
@@ -48,6 +59,10 @@ These functions in the Python script are triggered by the value in the **Set por
 - **leftover_es_f**: Leftover amount (in USD) after investing in a Mean-semivariance portfolio
 - **allocation_es_f**: Number of shares for each equity in a Mean-semivariance portfolio
 - **allocation_sharpe_f**: Number of shares for each equity in a Mean-variance portfolio
+
+An example of a function:
+
+![picture](tableau-portfolio-optimisation-hackathon/Images/Python 3 - Functions in Tableau.png)
 
 ## Tableau tools used
 
